@@ -29,12 +29,8 @@
     </header>
 
 ---
-
 layout: null
-
-
 title: Blog
-
 ---
 
 <main class="container py-5">
@@ -62,6 +58,7 @@ title: Blog
 </body>
 
 </html>
+
 
 
 
