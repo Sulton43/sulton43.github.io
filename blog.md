@@ -31,6 +31,8 @@
 ---
 
 layout: null
+
+
 title: Blog
 
 ---
@@ -60,5 +62,6 @@ title: Blog
 </body>
 
 </html>
+
 
 
