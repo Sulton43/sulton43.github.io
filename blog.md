@@ -2,66 +2,43 @@
 layout: null
 title: Blog
 ---
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Sulton</title>
+    <title>Blog | Sulton Nizomiddin</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
         <div class="header-content container">
-            <div class="logo">
-                <a href="index.html">Sulton Nizomiddin's Blog</a>
-            </div>
-            
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav class="main-nav" id="nav-links">
+            <div class="logo"><a href="index.html">Sulton Nizomiddin's Blog</a></div>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.md" class="active">Blog</a></li>
                     <li><a href="read.html">Reads</a></li>
-                    <li><a href="channnel.html">Channel</a></li>
+                    <li><a href="AboutMe.html">About Me</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
-
-<main class="container py-5">
-    <h1>Mening maqolalarim</h1>
-    <div class="blog-posts-list">
-        {% for post in site.posts %}
-            <article class="post-preview mb-4">
-                <span class="text-muted">{{ post.date | date: "%B %d, %Y" }}</span>
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-                <a href="{{ post.url }}" class="btn-read">Davomini o'qish →</a>
-            </article>
-        {% endfor %}
-    </div>
-</main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 Sulton Nizomiddin Blog</p>
+    <main class="container py-5" style="max-width: 800px; margin: 0 auto;">
+        <h1 style="text-align: center; margin-bottom: 50px; font-weight: 300; letter-spacing: 2px;">BLOG</h1>
+        
+        <div class="blog-posts-list">
+            {% for post in site.posts %}
+                <div class="post-item" style="display: flex; align-items: baseline; margin-bottom: 15px;">
+                    <span style="color: #999; font-family: monospace; min-width: 140px;">{{ post.date | date: "%d %B, %Y" }}</span>
+                    <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #007bff; font-size: 1.1rem; font-weight: 500;">{{ post.title }}</a>
+                </div>
+            {% endfor %}
         </div>
+    </main>
+
+    <footer style="text-align: center; margin-top: 100px; color: #ccc; font-size: 0.8rem;">
+        <p>&copy; 2026 Sulton Nizomiddin Blog</p>
     </footer>
-
-    <script src="js/script.js"></script>
-
 </body>
-
 </html>
-
-
-
-
-
