@@ -29,7 +29,7 @@
     </header>
 
 ---
-layout: default
+layout: null
 title: Blog
 ---
 
@@ -58,3 +58,4 @@ title: Blog
 </body>
 
 </html>
+
