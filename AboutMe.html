@@ -3,57 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'zim haqimda - Sulton Nizomiddin</title>
+    <title>O'zim haqimda | Sulton Nizomiddin</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .about-main { max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        .profile-header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 30px; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .skill-badge { background: #eef2f7; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+        .intro-text h1 { margin: 0; font-size: 2rem; color: #222; }
+        .social-box { margin-top: 40px; padding: 20px; background: #fafafa; border-radius: 10px; text-align: center; }
+        .social-box a { margin: 0 10px; color: #007bff; text-decoration: none; font-weight: bold; }
+    </style>
 </head>
 <body>
-
     <header class="site-header">
         <div class="header-content container">
-            <div class="logo">
-                <a href="index.html">Sulton Nizomiddin's Blog</a>
-            </div>
-            
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav class="main-nav" id="nav-links">
+            <div class="logo"><a href="index.html">Sulton Nizomiddin's Blog</a></div>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.md">Blog</a></li>
                     <li><a href="read.html">Reads</a></li>
-                    <li><a href="channnel.html">Channel</a></li>
+                    <li><a href="AboutMe.html" class="active">About Me</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="about-section">
-            <h1 class="page-title">O'zim haqimda</h1>
-            
-            <div class="about-content">
-                <p>Salom! Men Sultonman. Dasturlash va texnologiyalar olamiga qiziqaman.</p>
-                <p>Bu sahifada mening tajribam, qiziqishlarim va nimalar bilan shug'ullanishim haqida batafsil ma'lumot bo'ladi.</p>
-                
-                <h3>Texnologiyalar</h3>
-                <ul>
-                    <li>HTML / CSS / JavaScript</li>
-                    <li>Python / Django</li>
-                    <li>Ma'lumotlar bazasi bilan ishlash</li>
-                </ul>
+    <main class="about-main">
+        <section class="profile-header">
+            <img src="photo_profile.jpg" alt="Sulton Nizomiddin" class="profile-img">
+            <div class="intro-text">
+                <h1>Salom, men Sultonman! 👋</h1>
+                <p>Dasturchi va texnologiya ixlosmandi.</p>
             </div>
+        </section>
+
+        <section class="content">
+            <h2>Men haqimda</h2>
+            <p>Men hozirda dasturlashni chuqur o'rganish va o'z bilimlarimni amaliy loyihalar orqali mustahkamlash jarayonidaman. Ushbu blog men uchun nafaqat bilim ulashish maskani, balki shaxsiy o'sishimni kuzatib borish vositasidir.</p>
+            
+            <h3>Texnologik ko'nikmalarim</h3>
+            <div class="skills-container">
+                <span class="skill-badge">HTML5 / CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Python / Django</span>
+                <span class="skill-badge">Git & GitHub</span>
+                <span class="skill-badge">Jekyll (Static Sites)</span>
+                <span class="skill-badge">Ma'lumotlar bazasi</span>
+            </div>
+        </section>
+
+        <section class="social-box">
+            <h3>Men bilan bog'laning</h3>
+            <a href="https://github.com/Sulton43" target="_blank">GitHub</a> | 
+            <a href="#" target="_blank">Telegram</a> | 
+            <a href="#" target="_blank">LinkedIn</a>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 Sulton Nizomiddin Blog</p>
-        </div>
+    <footer style="text-align: center; margin-top: 50px; color: #ccc; font-size: 0.9rem; padding: 20px;">
+        <p>&copy; 2026 Sulton Nizomiddin Blog</p>
     </footer>
-
-
-    <script src="js/script.js"></script>
 </body>
 </html>
