@@ -1,2 +1,6 @@
 theme: minima
 title: Sulton Nizomiddin Blog
+
+collections:
+  reads:
+    output: true
