@@ -1,5 +1,17 @@
+title: Sulton Nizomiddin
+author: Sulton Nizomiddin
+description: Dasturlash va kitoblar haqida shaxsiy blog
+
+url: "https://sulton43.github.io"
+baseurl: ""
+
 theme: minima
+
 collections:
   reads:
     output: true
     permalink: /reads/:path/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
