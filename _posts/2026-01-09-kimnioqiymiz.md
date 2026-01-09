@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Dasturlashni chuqurroq o'rganish uchun"
-date: 2026-01-01
+title: Kimni o'qiymiz?
+date: 2026-01-09
 categories: blog
 ---
 
