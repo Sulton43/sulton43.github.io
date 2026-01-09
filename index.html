@@ -1,71 +1,63 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sulton Nizomiddin</title>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulton Nizomiddin | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .profile-main-img {
+            width: 180px; /* Rasmni kichraytiramiz */
+            height: 180px;
+            border-radius: 50%; /* Dumaloq qilamiz */
+            object-fit: cover; /* Rasmni cho'zilib ketishdan saqlaydi */
+            margin-bottom: 25px;
+            border: 4px solid #f0f0f0;
+        }
+        .hero-section h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        .hero-section p {
+            color: #666;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content container">
+            <div class="logo"><a href="index.html">Sulton Nizomiddin's Blog</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="blog.md">Blog</a></li>
+                    <li><a href="read.html">Reads</a></li>
+                    <li><a href="AboutMe.html">About Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="header-content container">
-                <div class="logo">
-                    <a href="index.html">Sulton Nizomiddin's Blog</a>
-                </div>
-                
-                <button class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <main class="container">
+        <section class="hero-section">
+            <img src="photo_profile.jpg" alt="Sulton Nizomiddin" class="profile-main-img">
+            <h1>Sulton Nizomiddin</h1>
+            <p>Dasturchi, kitobxon va texnologiya ixlosmandi</p>
+        </section>
+    </main>
 
-                <nav class="main-nav" id="nav-links">
-                    <ul>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="read.html">Reads</a></li>
-                        <li><a href="channnel.html">Channel</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <main class="profile-section">
-            <div class="container">
-                <div class="profile-header">
-                    <div class="profile-photo-wrapper">
-                        <img src="assets/photo_profile.jpg" alt="Sulton surat" class="profile-image">
-                    </div>
-
-                    <div class="profile-info">
-                        <h1>Sulton Nizomiddin</h1>
-                        <p class="job-title">Programmer</p>
-                        <div class="social-links">
-                            <a href="https://substack.com/@sulton06" class="social-icon" target="_blank"><i class="fas fa-rss"></i></a>
-                            <a href="https://www.youtube.com/@SultonOrinboyev-k3o" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-                            <a href="https://t.me/sulton_orinboyev" class="social-icon" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="profile-body">
-                    <p class="intro-text">IT, mutolaa, hayot haqida postlar va videolar bo'ladi</p>
-                    <div class="action-buttons">
-                        <a href="blog.html" class="btn btn-primary">Blogni o'qimoq</a>
-                        <a href="AboutMe.html" class="btn btn-secondary">O'zim haqimda</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-    
-        <footer class="site-footer">
-            <div class="container">
-                <p class="copyright-text">
-                    &copy; 2025 Sulton Nizomiddin Blog
-                </p>
-            </div>
-
-        </footer>
-
-        <script src="js/script.js"></script>
-    </body>
-    </html>
+    <footer style="text-align: center; margin-top: 50px; color: #ccc;">
+        <p>&copy; 2026 Sulton Nizomiddin Blog</p>
+    </footer>
+</body>
+</html>
