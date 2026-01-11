@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -55,3 +56,86 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+=======
+---
+layout: null
+title: Reads
+---
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitoblar | Sulton Nizomiddin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content container">
+            <div class="logo"><a href="index.html">Sulton Nizomiddin's Blog</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="read.html" class="active">Reads</a></li>
+                    <li><a href="AboutMe.html">About Me</a></li>
+                </ul>
+                <button id="theme-toggle" style="background: none; border: 1px solid var(--gray); color: var(--text); cursor: pointer; padding: 5px 10px; border-radius: 5px; margin-left: 15px;">
+                    🌙
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-5" style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
+        <h1 style="text-align: center; margin-bottom: 50px; font-weight: 300; letter-spacing: 2px;">O'QILGAN KITOBLAR</h1>
+        
+        <div class="reads-list">
+            {% for book in site.reads %}
+                <div class="book-item" style="border-bottom: 1px solid #eee; padding: 20px 0; display: flex; justify-content: space-between; align-items: baseline;">
+                    <div>
+                        <h2 style="margin: 0; font-size: 1.2rem;">
+                            <a href="{{ book.url | relative_url }}" style="text-decoration: none; color: #007bff; font-weight: 500;">{{ book.title }}</a>
+                        </h2>
+                        <p style="color: #666; margin: 5px 0; font-style: italic;">Muallif: {{ book.author }}</p>
+                    </div>
+                    <span style="color: #999; font-family: monospace; font-size: 0.9rem;">{{ book.date | date: "%Y" }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer style="text-align: center; margin-top: 100px; color: #ccc; font-size: 0.8rem; padding: 20px;">
+        <p>&copy; 2026 Sulton Nizomiddin Blog</p>
+    </footer>
+
+    <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    // Agar oldin tanlangan bo'lsa, o'shani o'rnatish
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            toggleButton.textContent = '☀️';
+        }
+    }
+
+    toggleButton.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleButton.textContent = '🌙';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleButton.textContent = '☀️';
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+>>>>>>> 4ee586414beadef9c768d6c8691801768ade2317

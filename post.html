@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -56,3 +57,93 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqola nomi - Sulton Nizomiddin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content container">
+            <div class="logo">
+                <a href="index.html">Sulton Nizomiddin's Blog</a>
+            </div>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="main-nav" id="nav-links">
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="read.html">Reads</a></li>
+                    <li><a href="channnel.html">Channel</a></li>
+                </ul>
+                <button id="theme-toggle" style="background: none; border: 1px solid var(--gray); color: var(--text); cursor: pointer; padding: 5px 10px; border-radius: 5px; margin-left: 15px;">
+                    🌙
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="single-post">
+            <header class="post-header">
+                <span class="post-date">22-Dekabr, 2024</span>
+                <h1>Sun'iy intelekt qayerga qarab ketmoqda?</h1>
+            </header>
+            
+            <div class="post-content">
+                <p>Bu yerda maqolaning asosiy matni bo'ladi. Matn o'qish uchun qulay va chiroyli tartibda joylashishi kerak...</p>
+                <p>Ikkinchi xatboshi: Texnologiyalar olamidagi yangiliklar haqida batafsil...</p>
+            </div>
+
+            <div class="post-footer">
+                <a href="blog.html" class="back-link">← Orqaga qaytish</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Sulton Nizomiddin Blog</p>
+        </div>
+    </footer>
+
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    // Agar oldin tanlangan bo'lsa, o'shani o'rnatish
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            toggleButton.textContent = '☀️';
+        }
+    }
+
+    toggleButton.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleButton.textContent = '🌙';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleButton.textContent = '☀️';
+        }
+    });
+</script>
+</body>
+
+</html>
+
+src="js/script.js"
+>>>>>>> 4ee586414beadef9c768d6c8691801768ade2317

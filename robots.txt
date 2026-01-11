@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sulton43.github.io/sitemap.xml
