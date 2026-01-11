@@ -59,26 +59,6 @@ title: Reads
         </div>
     </footer>
 
-    <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-
-        if (localStorage.getItem('theme') === 'dark') {
-            htmlElement.setAttribute('data-theme', 'dark');
-            toggleButton.textContent = '☀️';
-        }
-
-        toggleButton.addEventListener('click', () => {
-            if (htmlElement.getAttribute('data-theme') === 'dark') {
-                htmlElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                toggleButton.textContent = '🌙';
-            } else {
-                htmlElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                toggleButton.textContent = '☀️';
-            }
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
