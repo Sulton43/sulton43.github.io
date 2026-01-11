@@ -15,41 +15,34 @@ title: Reads
     <header class="site-header">
         <div class="header-content container">
             <div class="logo"><a href="index.html">Sulton Nizomiddin's Blog</a></div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="nav-links">
                 <ul>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="read.html" class="active">Reads</a></li>
                     <li><a href="AboutMe.html">About Me</a></li>
                 </ul>
-                <button id="theme-toggle" title="Tungi rejim">🌙</button>
+                <button id="theme-toggle">🌙</button>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section class="reads-header" style="margin-bottom: 40px;">
-            <h1 class="page-title">Mutolaa</h1>
-            <p style="color: var(--gray);">Men o'qigan va tavsiya qiladigan kitoblar ro'yxati.</p>
-        </section>
+        <h1 class="page-title">Mutolaa</h1>
+        <p style="color: var(--gray); margin-bottom: 30px;">Men o'qigan va tavsiya qiladigan kitoblar ro'yxati.</p>
 
         <div class="book-list">
+            {% for book in site.reads %}
             <div class="book-item" style="border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; justify-content: space-between; align-items: center;">
                 <div class="book-info">
-                    <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent);">Atom odatlar</h3>
-                    <p style="margin: 5px 0; color: var(--text);">James Clear</p>
-                    <p style="font-size: 0.9rem; color: var(--gray);">Kichik o'zgarishlarning ulkan natijalari haqida.</p>
+                    <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent);">
+                        <a href="{{ book.url | relative_url }}" style="text-decoration: none; color: inherit;">{{ book.title }}</a>
+                    </h3>
+                    <p style="margin: 5px 0; color: var(--text);">{{ book.author }}</p>
+                    <p style="font-size: 0.9rem; color: var(--gray);">{{ book.description }}</p>
                 </div>
-                <div class="book-status" style="font-size: 0.9rem;">O'qilgan ✅</div>
+                <div class="book-status" style="font-size: 0.9rem; color: var(--text);">{{ book.status }}</div>
             </div>
-
-            <div class="book-item" style="border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; justify-content: space-between; align-items: center;">
-                <div class="book-info">
-                    <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent);">Raqamli odob-axloq</h3>
-                    <p style="margin: 5px 0; color: var(--text);">Cal Newport</p>
-                    <p style="font-size: 0.9rem; color: var(--gray);">Texnologiyalar dunyosida diqqatni saqlash haqida.</p>
-                </div>
-                <div class="book-status" style="font-size: 0.9rem;">O'qilmoqda 📖</div>
-            </div>
+            {% endfor %}
         </div>
     </main>
 
