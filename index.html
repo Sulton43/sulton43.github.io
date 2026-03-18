@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sulton Nizomiddin | Blog</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sulton Nizomiddin | Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content container">
-            <div class="logo">
-                <a href="index.html">Sulton Nizomiddin's Blog</a>
-            </div>
-            
-            <nav class="main-nav" id="nav-links">
-                <ul>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="read.html">Reads</a></li>
-                    <li><a href="AboutMe.html">About Me</a></li>
-                </ul>
-                <button id="theme-toggle" title="Tungi rejim">🌙</button>
-            </nav>
+
+<header class="site-header">
+  <div class="header-content container">
+    <div class="logo">
+      <a href="index.html">Sulton Nizomiddin's Blog</a>
+    </div>
+    <nav class="main-nav" id="nav-links">
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="read.html">Reads</a></li>
+        <li><a href="AboutMe.html">About Me</a></li>
+      </ul>
+      <button id="theme-toggle" title="Tungi rejim">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Profil qismi (avvalgidek) -->
+  <section class="profile-section">
+    <div class="profile-photo-wrapper">
+      <img src="assets/photo_profile.jpg" alt="Sulton Nizomiddin" class="profile-image">
+    </div>
+    <div class="profile-info">
+      <h1>Sulton Nizomiddin</h1>
+      <p class="job-title">Dasturchi, kitobxon va texnologiya ixlosmandi</p>
+      <div class="social-links">
+        <a href="https://substack.com/@sulton06" class="social-icon" target="_blank"><i class="fas fa-rss"></i></a>
+        <a href="https://www.youtube.com/@SultonOrinboyev-k3o" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/sulton_orinboyev" class="social-icon" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+      <p class="intro-text">IT, mutolaa va hayot haqida postlar hamda videolar.</p>
+      <div class="action-buttons">
+        <a href="blog.html" class="btn btn-primary">Blogni o'qish</a>
+        <a href="AboutMe.html" class="btn btn-secondary">O'zim haqimda</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- So'nggi postlar qismi -->
+  <section class="home-posts-section">
+    <div class="home-posts-header">
+      <h2>So'nggi postlar</h2>
+      <a href="blog.html">Barchasi →</a>
+    </div>
+
+    {% assign posts = site.posts %}
+    {% if posts.size > 0 %}
+
+      {% assign latest = posts.first %}
+      {% assign cat = latest.category | default: latest.categories.first | default: "Umumiy" %}
+      {% assign badge_class = "badge-default" %}
+      {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
+      {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
+      {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
+
+      <a href="{{ latest.url | relative_url }}" class="home-post-featured">
+        <div class="post-meta">
+          <span class="badge badge-new">So'nggi</span>
+          <span style="font-size:12px;color:var(--gray)">{{ latest.date | date: "%d %B, %Y" }}</span>
         </div>
-    </header>
+        <div class="post-title">{{ latest.title }}</div>
+        <p class="post-excerpt">
+          {% if latest.excerpt %}
+            {{ latest.excerpt | strip_html | truncate: 120 }}
+          {% else %}
+            {{ latest.content | strip_html | truncate: 120 }}
+          {% endif %}
+        </p>
+      </a>
 
-    <main class="container">
-        <section class="profile-section">
-            <div class="profile-photo-wrapper">
-                <img src="assets/photo_profile.jpg" alt="Sulton Nizomiddin" class="profile-image">
-            </div>
+      {% for post in posts offset: 1 limit: 3 %}
+        {% assign cat = post.category | default: post.categories.first | default: "Umumiy" %}
+        {% assign badge_class = "badge-default" %}
+        {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
+        {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
+        {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
 
-            <div class="profile-info">
-                <h1>Sulton Nizomiddin</h1>
-                <p class="job-title">Dasturchi, kitobxon va texnologiya ixlosmandi</p>
-                
-                <div class="social-links">
-                    <a href="https://substack.com/@sulton06" class="social-icon" target="_blank"><i class="fas fa-rss"></i></a>
-                    <a href="https://www.youtube.com/@SultonOrinboyev-k3o" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://t.me/sulton_orinboyev" class="social-icon" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                </div>
+        <a href="{{ post.url | relative_url }}" class="home-post-row">
+          <div>
+            <div class="home-post-row-date">{{ post.date | date: "%d %B, %Y" }}</div>
+            <div class="home-post-row-title">{{ post.title }}</div>
+          </div>
+          <span class="badge {{ badge_class }}">{{ cat }}</span>
+        </a>
+      {% endfor %}
 
-                <p class="intro-text">IT, mutolaa va hayot haqida postlar hamda videolar.</p>
-                
-                <div class="action-buttons">
-                    <a href="blog.html" class="btn btn-primary" style="border-color: aliceblue;">Blogni o'qish</a>
-                    <a href="AboutMe.html" class="btn btn-secondary">O'zim haqimda</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Sulton Nizomiddin Blog</p>
-        </div>
-    </footer>
+    {% else %}
+      <p style="color:var(--gray);font-size:14px">Hozircha postlar yo'q.</p>
+    {% endif %}
 
-    <script src="js/script.js"></script>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Sulton Nizomiddin Blog</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
