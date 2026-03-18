@@ -2,55 +2,234 @@
 layout: null
 title: Blog
 ---
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Sulton Nizomiddin</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Sulton Nizomiddin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .blog-page-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .blog-page-header {
+      padding: 36px 0 24px;
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      margin-bottom: 32px;
+    }
+    .blog-page-header h1 {
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      letter-spacing: -0.4px;
+    }
+    .blog-page-header p {
+      font-size: 14px;
+      color: var(--gray, #777);
+      margin: 0;
+    }
+    .post-featured {
+      border: 1px solid var(--border-color, #e5e5e5);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      display: block;
+      background: var(--card-bg, #fafafa);
+      transition: border-color 0.2s;
+    }
+    .post-featured:hover {
+      border-color: var(--text-color, #222);
+    }
+    .post-featured .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .post-featured h2 {
+      font-size: 19px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      letter-spacing: -0.3px;
+      color: var(--text-color, #111);
+    }
+    .post-featured .post-excerpt {
+      font-size: 14px;
+      color: var(--gray, #666);
+      line-height: 1.7;
+      margin: 0 0 14px;
+    }
+    .post-featured .read-more {
+      font-size: 13px;
+      color: var(--gray, #888);
+    }
+    .post-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .post-list-item:hover .post-list-title {
+      color: var(--gray, #555);
+    }
+    .post-list-item .post-list-left {
+      flex: 1;
+    }
+    .post-list-date {
+      font-size: 12px;
+      color: var(--gray, #999);
+      margin-bottom: 5px;
+    }
+    .post-list-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-color, #111);
+      margin: 0 0 5px;
+      letter-spacing: -0.2px;
+      transition: color 0.15s;
+    }
+    .post-list-excerpt {
+      font-size: 13px;
+      color: var(--gray, #777);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .badge-new     { background: #FEF3C7; color: #92400E; }
+    .badge-code    { background: #DBEAFE; color: #1E3A8A; }
+    .badge-book    { background: #D1FAE5; color: #064E3B; }
+    .badge-life    { background: #FCE7F3; color: #831843; }
+    .badge-default { background: #F3F4F6; color: #374151; }
+    .blog-footer {
+      padding: 32px 0 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray, #aaa);
+    }
+    .blog-footer a {
+      color: var(--gray, #888);
+      text-decoration: underline;
+    }
+    body.dark-mode .post-featured {
+      background: #1a1a1a;
+      border-color: #333;
+    }
+    body.dark-mode .post-featured:hover { border-color: #888; }
+    body.dark-mode .post-list-item      { border-color: #2a2a2a; }
+    body.dark-mode .badge-new     { background: #78350f; color: #FDE68A; }
+    body.dark-mode .badge-code    { background: #1e3a5f; color: #BFDBFE; }
+    body.dark-mode .badge-book    { background: #064e3b; color: #A7F3D0; }
+    body.dark-mode .badge-life    { background: #500724; color: #FBCFE8; }
+    body.dark-mode .badge-default { background: #374151; color: #E5E7EB; }
+  </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content container">
-            <div class="logo">
-                <a href="index.html">Sulton Nizomiddin's Blog</a>
-            </div>
-            
-            <nav class="main-nav" id="nav-links">
-                <ul>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="read.html">Reads</a></li>
-                    <li><a href="AboutMe.html">About Me</a></li>
-                </ul>
-                <button id="theme-toggle" title="Tungi rejim">🌙</button>
-            </nav>
+
+<header class="site-header">
+  <div class="header-content container">
+    <div class="logo">
+      <a href="index.html">Sulton Nizomiddin's Blog</a>
+    </div>
+    <nav class="main-nav" id="nav-links">
+      <ul>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="read.html">Reads</a></li>
+        <li><a href="AboutMe.html">About Me</a></li>
+      </ul>
+      <button id="theme-toggle" title="Tungi rejim">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="blog-page-wrapper">
+
+    <div class="blog-page-header">
+      <h1>Barcha postlar</h1>
+      <p>IT, mutolaa va hayot haqida — o'zbek tilida</p>
+    </div>
+
+    {% assign posts = site.posts %}
+    {% if posts.size > 0 %}
+
+      {% assign latest = posts.first %}
+      {% assign cat = latest.category | default: latest.categories.first | default: "Umumiy" %}
+      {% assign badge_class = "badge-default" %}
+      {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
+      {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
+      {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
+
+      <a href="{{ latest.url | relative_url }}" class="post-featured">
+        <div class="post-meta">
+          <span class="badge badge-new">So'nggi post</span>
+          <span style="font-size:12px;color:var(--gray,#999)">
+            {{ latest.date | date: "%d %B, %Y" }}
+          </span>
         </div>
-    </header>
+        <h2>{{ latest.title }}</h2>
+        <p class="post-excerpt">
+          {% if latest.excerpt %}
+            {{ latest.excerpt | strip_html | truncate: 140 }}
+          {% else %}
+            {{ latest.content | strip_html | truncate: 140 }}
+          {% endif %}
+        </p>
+        <span class="read-more">O'qish →</span>
+      </a>
 
-    <main class="container">
-        <section class="blog-list-section">
-            <h1 class="page-title">Blog</h1>
+      {% for post in posts offset: 1 %}
+        {% assign cat = post.category | default: post.categories.first | default: "Umumiy" %}
+        {% assign badge_class = "badge-default" %}
+        {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
+        {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
+        {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
 
-            <div class="blog-posts-list">
-                {% for post in site.posts %}
-                    <div class="list-item">
-                        <span class="post-date">{{ post.date | date: "%d %b, %Y" }}</span>
-                        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-                    </div>
-                {% else %}
-                    <p style="color: var(--gray);">Hozircha maqolalar yo'q.</p>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
+        <a href="{{ post.url | relative_url }}" class="post-list-item">
+          <div class="post-list-left">
+            <div class="post-list-date">{{ post.date | date: "%d %B, %Y" }}</div>
+            <div class="post-list-title">{{ post.title }}</div>
+            <p class="post-list-excerpt">
+              {% if post.excerpt %}
+                {{ post.excerpt | strip_html | truncate: 110 }}
+              {% else %}
+                {{ post.content | strip_html | truncate: 110 }}
+              {% endif %}
+            </p>
+          </div>
+          <span class="badge {{ badge_class }}" style="margin-top:18px">{{ cat }}</span>
+        </a>
+      {% endfor %}
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Sulton Nizomiddin Blog</p>
-        </div>
-    </footer>
+    {% else %}
+      <p style="color:var(--gray)">Hozircha maqolalar yo'q.</p>
+    {% endif %}
 
-    <script src="js/script.js"></script></body>
+    <div class="blog-footer">
+      © 2026 Sulton Nizomiddin ·
+      <a href="https://t.me/sulton_orinboyev" target="_blank">Telegram</a> ·
+      <a href="https://substack.com/@sulton06" target="_blank">Substack</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+</body>
 </html>
