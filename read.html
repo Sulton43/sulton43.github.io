@@ -27,22 +27,32 @@ title: Reads
     </header>
 
     <main class="container">
-        <h1 class="page-title">Mutolaa</h1>
-        <p style="color: var(--gray); margin-bottom: 30px;">Men o'qigan va tavsiya qiladigan kitoblar ro'yxati.</p>
+        <div style="max-width: 640px; margin: 0 auto; padding: 48px 0 80px;">
 
-        <div class="book-list">
-            {% for book in site.reads %}
-            <div class="book-item" style="border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; justify-content: space-between; align-items: center;">
-                <div class="book-info">
-                    <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent);">
-                        <a href="{{ book.url | relative_url }}" style="text-decoration: none; color: inherit;">{{ book.title }}</a>
-                    </h3>
-                    <p style="margin: 5px 0; color: var(--text);">{{ book.author }}</p>
-                    <p style="font-size: 0.9rem; color: var(--gray);">{{ book.description }}</p>
-                </div>
-                <div class="book-status" style="font-size: 0.9rem; color: var(--text);">{{ book.status }}</div>
+            <div style="padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px;">
+                <h1 class="page-title">Mutolaa</h1>
+                <p class="page-subtitle">Men o'qigan va tavsiya qiladigan kitoblar ro'yxati.</p>
             </div>
-            {% endfor %}
+
+            <div class="book-list">
+                {% for book in site.reads %}
+                <div class="book-item">
+                    <div class="book-info">
+                        <h3>
+                            <a href="{{ book.url | relative_url }}">{{ book.title }}</a>
+                        </h3>
+                        <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--gray); font-family: 'DM Mono', monospace;">{{ book.author }}</p>
+                        {% if book.description %}
+                        <p style="font-size: 0.82rem; color: var(--gray); margin-top: 5px; line-height: 1.5;">{{ book.description }}</p>
+                        {% endif %}
+                    </div>
+                    {% if book.status %}
+                    <div class="book-status">{{ book.status }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
         </div>
     </main>
 
