@@ -153,10 +153,12 @@ body {
 /* --- 3. PROFIL VA ASOSIY SAHIFA (YANGI) --- */
 .profile-section {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
+    gap: 16px;
     padding: 48px 0 52px;
     border-bottom: 1px solid var(--border);
+    max-width: 560px;
 }
 
 .profile-photo-wrapper {
@@ -188,12 +190,13 @@ body {
 }
 
 .profile-section h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 800;
-    letter-spacing: -1.5px;
-    line-height: 1.1;
+    letter-spacing: -1px;
+    line-height: 1.15;
     margin-bottom: 6px;
     color: var(--text);
+    max-width: 100%;
 }
 
 .job-title {
@@ -245,6 +248,7 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    width: fit-content;
 }
 
 .btn {
@@ -259,6 +263,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    width: auto;
+    white-space: nowrap;
 }
 
 .btn-primary {
