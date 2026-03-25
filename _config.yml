@@ -5,14 +5,27 @@ description: Dasturlash va kitoblar haqida shaxsiy blog
 url: "https://sulton43.github.io"
 baseurl: ""
 
+# Hech qanday tema ishlatmaymiz
+theme: ~
+
 collections:
   reads:
     output: true
     permalink: /reads/:path/
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "reads"
+    values:
+      layout: "read"
+
 plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-
-  
