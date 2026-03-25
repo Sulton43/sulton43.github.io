@@ -1,12 +1,8 @@
 title: Sulton Nizomiddin
 author: Sulton Nizomiddin
 description: Dasturlash va kitoblar haqida shaxsiy blog
-
 url: "https://sulton43.github.io"
 baseurl: ""
-
-# Hech qanday tema ishlatmaymiz
-theme: ~
 
 collections:
   reads:
