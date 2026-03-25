@@ -5,8 +5,6 @@ description: Dasturlash va kitoblar haqida shaxsiy blog
 url: "https://sulton43.github.io"
 baseurl: ""
 
-theme: minima
-
 collections:
   reads:
     output: true
