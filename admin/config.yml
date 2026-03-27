@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: Sulton43/sulton43.github.io
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog postlar"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Sarlavha", name: "title", widget: "string" }
+      - { label: "Sana", name: "date", widget: "datetime" }
+      - { label: "Kategoriya", name: "category", widget: "select", options: ["Dasturlash", "Kitob", "Hayot", "Umumiy"] }
+      - { label: "Matn", name: "body", widget: "markdown" }
+    meta:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
