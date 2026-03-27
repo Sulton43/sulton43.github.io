@@ -14,9 +14,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Sarlavha", name: "title", widget: "string" }
       - { label: "Sana", name: "date", widget: "datetime" }
       - { label: "Kategoriya", name: "category", widget: "select", options: ["Dasturlash", "Kitob", "Hayot", "Umumiy"] }
       - { label: "Matn", name: "body", widget: "markdown" }
-    meta:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
