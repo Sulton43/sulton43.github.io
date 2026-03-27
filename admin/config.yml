@@ -2,6 +2,7 @@ backend:
   name: github
   repo: Sulton43/sulton43.github.io
   branch: main
+  base_url: https://sveltia-cms-auth.pages.dev
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
