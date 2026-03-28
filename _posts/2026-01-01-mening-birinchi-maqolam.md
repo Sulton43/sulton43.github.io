@@ -15,3 +15,5 @@ Bu usul menga quyidagilarni o'rgatmoqda:
 * Avtomatlashtirilgan veb-sahifalar yaratish
 
 Dasturlash — bu qiziqarli sayohat!
+
+
