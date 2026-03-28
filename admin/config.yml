@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Sulton43/sulton43.github.io
   branch: main
-  base_url: https://famous-frangipane-156343.netlify.app//lovely-stardust-6ceead.netlify.app
+  base_url: https://famous-frangipane-156343.netlify.app
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
