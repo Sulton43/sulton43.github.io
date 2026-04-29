@@ -3,11 +3,10 @@ layout: post
 title: "Dasturlashni chuqurroq o'rganish uchun"
 date: 2026-01-01
 categories: blog
+excerpt: "GitHub Pages va Jekyll yordamida blog yuritishni boshladim — bu sayohatning birinchi qadami."
 ---
 
-# Salom, bu mening birinchi maqolam!
-
-Bugun men **GitHub Pages** va **Jekyll** yordamida o'z blogimni yuritishni boshladim. 
+Bugun men **GitHub Pages** va **Jekyll** yordamida o'z blogimni yuritishni boshladim.
 
 Bu usul menga quyidagilarni o'rgatmoqda:
 * Fayllar tizimi bilan ishlash
@@ -15,5 +14,3 @@ Bu usul menga quyidagilarni o'rgatmoqda:
 * Avtomatlashtirilgan veb-sahifalar yaratish
 
 Dasturlash — bu qiziqarli sayohat!
-
-
