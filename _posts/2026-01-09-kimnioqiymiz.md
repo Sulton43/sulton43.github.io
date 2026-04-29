@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Kimni o'qiymiz?
+title: "Kimni o'qiymiz?"
 date: 2026-01-09
 categories: blog
+excerpt: "Yashashni bizga begonalar o'rgatmasin — ota-bobomiz allaqachon o'rgatib ketgan."
 ---
 
 Bizga begona bo'lgan kitoblar ko'paymoqda. Albatta ularda ilm bitilganini tan olish kerak.
