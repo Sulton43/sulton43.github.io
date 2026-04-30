@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Sulton Nizomiddin</title>
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-content container">
+        <div class="logo"><a href="{{ '/' | relative_url }}">Sulton Nizomiddin's Blog</a></div>
+        <nav class="main-nav" id="nav-links">
+            <ul>
+                <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
+                <li><a href="{{ '/read.html' | relative_url }}">Reads</a></li>
+                <li><a href="{{ '/AboutMe.html' | relative_url }}">About Me</a></li>
+            </ul>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </div>
+</header>
+<main class="container">
+    {{ content }}
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2026 Sulton Nizomiddin Blog</p>
+    </div>
+</footer>
+<script src="{{ '/js/script.js' | relative_url }}"></script>
+</body>
+</html>  
