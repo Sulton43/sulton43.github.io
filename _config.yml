@@ -3,6 +3,7 @@ author: Sulton Nizomiddin
 description: Dasturlash va kitoblar haqida shaxsiy blog
 url: "https://sulton43.github.io"
 baseurl: ""
+lang: uz
 
 collections:
   reads:
