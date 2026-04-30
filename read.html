@@ -1,67 +1,31 @@
 ---
-layout: null
-title: Reads
+layout: default
+title: Mutolaa
 ---
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutolaa | Sulton Nizomiddin</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <header class="site-header">
-        <div class="header-content container">
-            <div class="logo"><a href="index.html">Sulton Nizomiddin's Blog</a></div>
-            <nav class="main-nav" id="nav-links">
-                <ul>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="read.html" class="active">Reads</a></li>
-                    <li><a href="AboutMe.html">About Me</a></li>
-                </ul>
-                <button id="theme-toggle">🌙</button>
-            </nav>
+
+<main class="container">
+    <div style="max-width: 640px; margin: 0 auto; padding: 48px 0 80px;">
+        <div style="padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px;">
+            <h1 class="page-title">Mutolaa</h1>
+            <p class="page-subtitle">Men o'qigan va tavsiya qiladigan kitoblar ro'yxati.</p>
         </div>
-    </header>
-
-    <main class="container">
-        <div style="max-width: 640px; margin: 0 auto; padding: 48px 0 80px;">
-
-            <div style="padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px;">
-                <h1 class="page-title">Mutolaa</h1>
-                <p class="page-subtitle">Men o'qigan va tavsiya qiladigan kitoblar ro'yxati.</p>
-            </div>
-
-            <div class="book-list">
-                {% for book in site.reads %}
-                <div class="book-item">
-                    <div class="book-info">
-                        <h3>
-                            <a href="{{ book.url | relative_url }}">{{ book.title }}</a>
-                        </h3>
-                        <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--gray); font-family: 'DM Mono', monospace;">{{ book.author }}</p>
-                        {% if book.description %}
-                        <p style="font-size: 0.82rem; color: var(--gray); margin-top: 5px; line-height: 1.5;">{{ book.description }}</p>
-                        {% endif %}
-                    </div>
-                    {% if book.status %}
-                    <div class="book-status">{{ book.status }}</div>
+        <div class="book-list">
+            {% for book in site.reads %}
+            <div class="book-item">
+                <div class="book-info">
+                    <h3>
+                        <a href="{{ book.url | relative_url }}">{{ book.title }}</a>
+                    </h3>
+                    <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--gray); font-family: 'DM Mono', monospace;">{{ book.author }}</p>
+                    {% if book.excerpt %}
+                    <p style="font-size: 0.82rem; color: var(--gray); margin-top: 5px; line-height: 1.5;">{{ book.excerpt | strip_html }}</p>
                     {% endif %}
                 </div>
-                {% endfor %}
+                {% if book.status %}
+                <div class="book-status">{{ book.status }}</div>
+                {% endif %}
             </div>
-
+            {% endfor %}
         </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Sulton Nizomiddin Blog</p>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+    </div>
+</main>
