@@ -2,7 +2,6 @@
 layout: default
 title: Mutolaa
 ---
-
 <main class="container">
     <div style="max-width: 640px; margin: 0 auto; padding: 48px 0 80px;">
         <div style="padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px;">
@@ -11,11 +10,9 @@ title: Mutolaa
         </div>
         <div class="book-list">
             {% for book in site.reads %}
-            <div class="book-item">
+            <a href="{{ book.url | relative_url }}" class="book-item" style="display: block; text-decoration: none; color: inherit;">
                 <div class="book-info">
-                    <h3>
-                        <a href="{{ book.url | relative_url }}">{{ book.title }}</a>
-                    </h3>
+                    <h3>{{ book.title }}</h3>
                     <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--gray); font-family: 'DM Mono', monospace;">{{ book.author }}</p>
                     {% if book.excerpt %}
                     <p style="font-size: 0.82rem; color: var(--gray); margin-top: 5px; line-height: 1.5;">{{ book.excerpt | strip_html }}</p>
@@ -24,7 +21,7 @@ title: Mutolaa
                 {% if book.status %}
                 <div class="book-status">{{ book.status }}</div>
                 {% endif %}
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>
