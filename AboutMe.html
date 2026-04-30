@@ -1,84 +1,54 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'zim haqimda | Sulton Nizomiddin</title>
-    {% seo %}
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .about-main { max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-        .profile-header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 30px; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .skill-badge { background: #eef2f7; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
-        .intro-text h1 { margin: 0; font-size: 2rem; color: #222; }
-        .social-box { margin-top: 40px; padding: 20px; background: #fafafa; border-radius: 10px; text-align: center; }
-        .social-box a { margin: 0 10px; color: #007bff; text-decoration: none; font-weight: bold; }
-        
-        /* Tungi rejim uchun qo'shimcha moslashuv */
-        [data-theme="dark"] .intro-text h1 { color: #fff; }
-        [data-theme="dark"] .skill-badge { background: #333; color: #eee; }
-        [data-theme="dark"] .social-box { background: #1e1e1e; }
-        [data-theme="dark"] .profile-header { border-bottom-color: #333; }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="header-content container" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
-            <div class="logo"><a href="index.html" style="text-decoration: none; font-weight: bold; color: var(--text);">Sulton Nizomiddin's Blog</a></div>
-            <nav class="main-nav" style="display: flex; align-items: center; gap: 20px;">
-                <ul style="display: flex; list-style: none; gap: 20px; margin: 0; padding: 0;">
-                    <li><a href="blog.html" style="text-decoration: none; color: var(--text);">Blog</a></li>
-                    <li><a href="read.html" style="text-decoration: none; color: var(--text);">Reads</a></li>
-                    <li><a href="AboutMe.html" class="active" style="text-decoration: none; font-weight: bold; color: var(--text);">About Me</a></li>
-                </ul>
-                <button id="theme-toggle" style="background: none; border: 1px solid var(--gray); color: var(--text); cursor: pointer; padding: 5px 10px; border-radius: 5px; margin-left: 15px;">
-                    🌙
-                </button>
-            </nav>
+---
+layout: default
+title: O'zim haqimda
+---
+
+<style>
+    .about-main { max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+    .profile-header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 30px; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .skill-badge { background: #eef2f7; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+    .intro-text h1 { margin: 0; font-size: 2rem; color: #222; }
+    .social-box { margin-top: 40px; padding: 20px; background: #fafafa; border-radius: 10px; text-align: center; }
+    .social-box a { margin: 0 10px; color: #007bff; text-decoration: none; font-weight: bold; }
+    [data-theme="dark"] .intro-text h1 { color: #fff; }
+    [data-theme="dark"] .skill-badge { background: #333; color: #eee; }
+    [data-theme="dark"] .social-box { background: #1e1e1e; }
+    [data-theme="dark"] .profile-header { border-bottom-color: #333; }
+</style>
+
+<main class="about-main">
+    <section class="profile-header">
+        <img src="{{ '/assets/photo_profile.jpg' | relative_url }}" alt="Sulton Nizomiddin" class="profile-img">
+        <div class="intro-text">
+            <h1>Salom, men Sultonman!</h1>
+            <p>Dasturchi</p>
         </div>
-    </header>
+    </section>
 
-    <main class="about-main">
-        <section class="profile-header">
-            <img src="assets/photo_profile.jpg" alt="Sulton Nizomiddin" class="profile-img">
-            <div class="intro-text">
-                <h1>Salom, men Sultonman! </h1>
-                <p>Dasturchi</p>
-            </div>
-        </section>
+    <section class="content">
+        <h2>Men haqimda</h2>
+        <p>
+            Assalomu alaykum. Siz hozir bugungi kunda dasturlash yo'nalishi bo'yicha talaba bo'lgan men Sulton O'riboyevning blogidasiz. 
+            Bu sahifada o'zimni siz aziz o'quvchilarga tanishtirmoqchiman. Dasturlash sohasida tajribam yo'q desa ham bo'ladi, shunchaki 
+            o'rganish jarayonidaman, katta maqsad va orzular bilan yuribman bu yo'lda. Men bu sohadan tashqari asosan adabiyot, til,
+            tarix va boshqa shunga o'xshash fanlarga qiziqishim baland. 2023-yilda 
+            Toshkentda yangi ochilgan universitetlardan biri Japan Digital Universityga qabul qilindim. 2 yillarcha yapon tili o'qidim, hozirdan IT ko'nikmalarimni kuchaytirishni boshlaganman.
+        </p>
 
-        <section class="content">
-            <h2>Men haqimda</h2>
-            <p>
-                Assalomu alaykum. Siz hozir bugungi kunda dasturlash yo'nalishi bo'yicha talaba bo'lgan men Sulton O'riboyevning blogidasiz. 
-                Bu sahifada o'zimni siz aziz o'quvchilarga tanishtirmoqchiman. Dasturlash sohasida tajribam yo'q desa ham bo'ladi, shunchaki 
-                o'rganish jarayonidaman, katta maqsad va orzular bilan yuribman bu yo'lda. Men bu sohadan tashqari asosan adabiyot, til,
-                tarix va boshqa shunga o'xshash fanlarga qiziqishim baland. 2023-yilda 
-                Toshkentda yangi ochilgan universitetlardan biri Japan Digital Universityga qabul qilindim. 2 yillarcha yapon tili o'qidim, hozirdan IT ko'nikmalarimni kuchaytirishni boshlaganman.          
-            </p>
-            
-            <h3>Texnologik ko'nikmalarim</h3>
-            <div class="skills-container">
-                <span class="skill-badge">HTML5 / CSS3</span>
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">Python / Django</span>
-                <span class="skill-badge">Git & GitHub</span>
-                <span class="skill-badge">Jekyll</span>
-            </div>
-        </section>
+        <h3>Texnologik ko'nikmalarim</h3>
+        <div class="skills-container">
+            <span class="skill-badge">HTML5 / CSS3</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Python / Django</span>
+            <span class="skill-badge">Git & GitHub</span>
+            <span class="skill-badge">Jekyll</span>
+        </div>
+    </section>
 
-        <section class="social-box">
-            <h3>Men bilan bog'laning</h3>
-            <a href="https://github.com/Sulton43" target="_blank">GitHub</a>
-        </section>
-    </main>
-
-    <footer style="text-align: center; margin-top: 50px; color: #ccc; font-size: 0.9rem; padding: 20px;">
-        <p>&copy; 2026 Sulton Nizomiddin Blog</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+    <section class="social-box">
+        <h3>Men bilan bog'laning</h3>
+        <a href="https://github.com/Sulton43" target="_blank">GitHub</a>
+    </section>
+</main>
