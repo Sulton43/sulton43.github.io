@@ -809,3 +809,15 @@ body {
 .post-back:hover {
     color: var(--text);
 }
+
+
+
+/* --- 11. ABOUT ME SAHIFASI --- */
+.about-main { max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+.profile-header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 2px solid var(--border); padding-bottom: 30px; }
+.profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.skill-badge { background: var(--tag-bg); color: var(--text); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+.intro-text h1 { margin: 0; font-size: 2rem; color: var(--text); }
+.social-box { margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 10px; text-align: center; border: 1px solid var(--border); }
+.social-box a { margin: 0 10px; color: var(--accent2); text-decoration: none; font-weight: bold; }
