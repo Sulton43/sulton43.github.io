@@ -3,52 +3,20 @@ layout: default
 title: Blog
 ---
 
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Sulton Nizomiddin</title>
-  {% seo %}
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="header-content container">
-    <div class="logo">
-      <a href="index.html">Sulton Nizomiddin's Blog</a>
-    </div>
-    <nav class="main-nav" id="nav-links">
-      <ul>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="read.html">Reads</a></li>
-        <li><a href="AboutMe.html">About Me</a></li>
-      </ul>
-      <button id="theme-toggle" title="Tungi rejim">🌙</button>
-    </nav>
-  </div>
-</header>
-
 <main>
   <div class="blog-page-wrapper">
-
     <div class="blog-page-header">
       <h1>Barcha postlar</h1>
       <p>IT, mutolaa va hayot haqida — o'zbek tilida</p>
     </div>
-
     {% assign posts = site.posts %}
     {% if posts.size > 0 %}
-
       {% assign latest = posts.first %}
       {% assign cat = latest.category | default: latest.categories.first | default: "Umumiy" %}
       {% assign badge_class = "badge-default" %}
       {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
       {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
       {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
-
       <a href="{{ latest.url | relative_url }}" class="post-featured">
         <div class="post-meta">
           <span class="badge badge-new">So'nggi post</span>
@@ -66,14 +34,12 @@ title: Blog
         </p>
         <span class="read-more">O'qish →</span>
       </a>
-
       {% for post in posts offset: 1 %}
         {% assign cat = post.category | default: post.categories.first | default: "Umumiy" %}
         {% assign badge_class = "badge-default" %}
         {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
         {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
         {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
-
         <a href="{{ post.url | relative_url }}" class="post-list-item">
           <div class="post-list-left">
             <div class="post-list-date">{{ post.date | date: "%d %B, %Y" }}</div>
@@ -89,20 +55,13 @@ title: Blog
           <span class="badge {{ badge_class }}" style="margin-top:18px">{{ cat }}</span>
         </a>
       {% endfor %}
-
     {% else %}
       <p style="color:var(--gray)">Hozircha maqolalar yo'q.</p>
     {% endif %}
-
     <div class="blog-footer">
       © 2026 Sulton Nizomiddin ·
       <a href="https://t.me/sulton_orinboyev" target="_blank">Telegram</a> ·
       <a href="https://substack.com/@sulton06" target="_blank">Substack</a>
     </div>
-
   </div>
 </main>
-
-<script src="js/script.js"></script>
-</body>
-</html>
