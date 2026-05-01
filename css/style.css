@@ -138,15 +138,29 @@ body {
 @media (max-width: 768px) {
     .header-content {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
     }
+
+    .logo a {
+        font-size: 0.85rem;
+    }
+
+    .main-nav ul {
+        gap: 2px;
+    }
+
+    .main-nav a {
+        font-size: 0.72rem;
+        padding: 5px 7px;
+    }
+
     #theme-toggle {
-        order: 2;
-        margin-right: 8px;
-    }
-    .menu-toggle {
-        order: 3;
+        padding: 5px 8px;
+        font-size: 0.8rem;
+        margin-left: 4px;
     }
 }
 
