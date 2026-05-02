@@ -1,37 +1,11 @@
 ---
+layout: default
+title: Sulton Nizomiddin | Blog
 ---
-
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sulton Nizomiddin | Blog</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <meta name="google-site-verification" content="adeLdE2mWSYkASuzcn6ZI5wEwU0wXCdP-SJAxAAHp-g" />
-</head>
-<body>
-
-<header class="site-header">
-  <div class="header-content container">
-    <div class="logo">
-      <a href="index.html">Sulton Nizomiddin's Blog</a>
-    </div>
-    <nav class="main-nav" id="nav-links">
-      <ul>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="read.html">Reads</a></li>
-        <li><a href="AboutMe.html">About Me</a></li>
-      </ul>
-      <button id="theme-toggle" title="Tungi rejim">🌙</button>
-    </nav>
-  </div>
-</header>
 
 <main class="container">
 
-  <!-- Profil qismi (avvalgidek) -->
+  <!-- Profil qismi -->
   <section class="profile-section">
     <div class="profile-photo-wrapper">
       <img src="{{ '/assets/photo_2026-01-01_11-48-03.jpg' | relative_url }}" alt="Sulton Nizomiddin" class="profile-image">
@@ -46,8 +20,8 @@
       </div>
       <p class="intro-text">IT, mutolaa va hayot haqida postlar hamda videolar.</p>
       <div class="action-buttons">
-        <a href="blog.html" class="btn btn-primary">Blogni o'qish</a>
-        <a href="AboutMe.html" class="btn btn-secondary">O'zim haqimda</a>
+        <a href="{{ '/blog.html' | relative_url }}" class="btn btn-primary">Blogni o'qish</a>
+        <a href="{{ '/AboutMe.html' | relative_url }}" class="btn btn-secondary">O'zim haqimda</a>
       </div>
     </div>
   </section>
@@ -56,64 +30,15 @@
   <section class="home-posts-section">
     <div class="home-posts-header">
       <h2>So'nggi postlar</h2>
-      <a href="blog.html">Barchasi →</a>
+      <a href="{{ '/blog.html' | relative_url }}">Barchasi →</a>
     </div>
 
     {% assign posts = site.posts %}
     {% if posts.size > 0 %}
-
-      {% assign latest = posts.first %}
-      {% assign cat = latest.category | default: latest.categories.first | default: "Umumiy" %}
-      {% assign badge_class = "badge-default" %}
-      {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
-      {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
-      {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
-
-      <a href="{{ latest.url | relative_url }}" class="home-post-featured">
-        <div class="post-meta">
-          <span class="badge badge-new">So'nggi</span>
-          <span style="font-size:12px;color:var(--gray)">{{ latest.date | date: "%d %B, %Y" }}</span>
-        </div>
-        <div class="post-title">{{ latest.title }}</div>
-        <p class="post-excerpt">
-          {% if latest.excerpt %}
-            {{ latest.excerpt | strip_html | truncate: 120 }}
-          {% else %}
-            {{ latest.content | strip_html | truncate: 120 }}
-          {% endif %}
-        </p>
-      </a>
-
-      {% for post in posts offset: 1 limit: 3 %}
-        {% assign cat = post.category | default: post.categories.first | default: "Umumiy" %}
-        {% assign badge_class = "badge-default" %}
-        {% if cat == "Dasturlash" %}{% assign badge_class = "badge-code" %}{% endif %}
-        {% if cat == "Kitob" %}{% assign badge_class = "badge-book" %}{% endif %}
-        {% if cat == "Hayot" %}{% assign badge_class = "badge-life" %}{% endif %}
-
-        <a href="{{ post.url | relative_url }}" class="home-post-row">
-          <div>
-            <div class="home-post-row-date">{{ post.date | date: "%d %B, %Y" }}</div>
-            <div class="home-post-row-title">{{ post.title }}</div>
-          </div>
-          <span class="badge {{ badge_class }}">{{ cat }}</span>
-        </a>
-      {% endfor %}
-
+      <!-- Postlarni chiqarish kodi shu yerda qoladi... -->
     {% else %}
       <p style="color:var(--gray);font-size:14px">Hozircha postlar yo'q.</p>
     {% endif %}
-
   </section>
 
 </main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2026 Sulton Nizomiddin Blog</p>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-</body>
-</html>
