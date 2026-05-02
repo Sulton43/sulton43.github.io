@@ -848,3 +848,47 @@ body {
         padding: 24px 16px 60px;
     }
 }
+
+
+/* --- 13. HAMBURGER MENYU --- */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text);
+    padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 12px 0;
+        gap: 8px;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .logo a {
+        font-size: 0.85rem;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        padding: 12px 0;
+    }
+}
